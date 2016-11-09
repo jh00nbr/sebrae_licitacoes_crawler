@@ -1,8 +1,7 @@
-# Sebrae Licitacoes - SFC - Canal do Fornecedor
-
+# Sebrae Licitacoes - SCF - Canal do Fornecedor
 
 # Objetivo
-Buscar informações e extrair dados no SFC do Sebrae, para análise posterior.
+Buscar informações e extrair dados no SCF do Sebrae, para posteriormente realizar análise de texto e geração de graficos.
 
 
 Sebrae: http://www.portal.scf.sebrae.com.br/licitante/frmPesquisarAvancadoLicitacao.aspx
