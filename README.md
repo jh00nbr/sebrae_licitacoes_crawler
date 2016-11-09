@@ -9,7 +9,7 @@ Buscar informações e extrair dados no SCF do Sebrae, para posteriormente reali
 
 
 
-# Quantidade de licitações por modalidade
+# Quantidade de licitações por modalidade - em 08/11/2016
 
 * Leilao: 4  
 * Prega Presencial: 76
@@ -19,9 +19,13 @@ Buscar informações e extrair dados no SCF do Sebrae, para posteriormente reali
 * Pre-qualificacao: 1
 * Credenciamento: 4
 
-
-
 <img height="450px" src="https://github.com/jh00nbr/sebrae_licitacoes_crawler/raw/master/graficos/quantidade_licitacao_por_modalidade.png"></img><br>
+
+
+# Quantidade de licitações por estados brasileiros - em 08/11/2016
+
+<img height="450px" src="https://raw.githubusercontent.com/jh00nbr/sebrae_licitacoes_crawler/master/graficos/quantidade_licitacao_por_estado.png"></img><br>
+
 
 
 # Exemplo - Banco de dados:
