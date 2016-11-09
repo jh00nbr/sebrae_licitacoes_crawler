@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html webdriver="true" xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	SCF
+</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script language="javascript" type="text/jscript" src="sebrae-11_files/funcoes.js"></script>
+
+    <link href="sebrae-11_files/css.css" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><link rel="shortcut icon" href="http://www.portal.scf.sebrae.com.br/licitante/img/favicon.png"><link rel="stylesheet" href="sebrae-11_files/app.css"><link rel="stylesheet" href="sebrae-11_files/article.css"><link rel="stylesheet" href="sebrae-11_files/global-front.css"><link rel="stylesheet" href="sebrae-11_files/style.css">
+    
+    <script src="sebrae-11_files/modernizr-2.html"></script>
+
+    <!-- DBMASTER REQUESTS -->
+    <script type="text/javascript" src="sebrae-11_files/DBMaster.html"></script>
+    <!-- jQuery 1.9.1 -->
+    <script type="text/javascript" src="sebrae-11_files/jquery-1.html"></script>
+    <!-- JQUERY SITE DATABASE RESOURCE -->
+    <script type="text/javascript" src="sebrae-11_files/padrao.html"></script>
+    <!-- DatePicker -->
+    <script type="text/javascript" src="sebrae-11_files/jquery_004.html"></script>
+    <!-- Chamadas para a validação de form (NÃO MUDAR ORDEM) -->
+    <script type="text/javascript" src="sebrae-11_files/jquery_005.html"></script>
+    <script type="text/javascript" src="sebrae-11_files/jquery_003.html"></script>
+    <script type="text/javascript" src="sebrae-11_files/jquery.html"></script>
+    <!-- MULTIMEDIA KIT -->
+    <script type="text/javascript" src="sebrae-11_files/jquery_002.html"></script>
+
+    <style type="text/css">
+        .inputVisible
+        {
+            background: none !important;
+        }
+        input[type="image"] {
+            border: 0;
+        }
+        #header h2
+        {
+            color: #5C6D7E;
+            font-size: 22px;
+            margin-top: 8px;
+        }
+        
+        .footer
+        {
+            border-left: 1px solid #5C6D7E;
+            color: #5C6D7E;
+            line-height: 0.7;
+            padding-left: 6px;
+            padding-right: 2px;
+            padding-top: 25px;
+            text-decoration: none;            
+        }
+        
+        .radioLabel
+        {
+            color: #5C6D7E;
+            margin: 0 0 5px !important;
+            width: auto;
+
+            font: 400 15px/17px 'Lato',Arial,Trebuchet MS,'Tahoma',Helvetica,sans-serif !important;
+            height: auto;
+        }
+
+        input[type="radio"] {
+            border: 0px !important;
+        }
+    </style>
+</head>
+<body class="">
+	
+    <div>
+        <div id="header" style="text-align: left">
+            <div class="wrapper">
+			    <h1 class="logo"><a href="http://www.sebrae.com.br/">
+                    <img id="imgLogo" title="Portal Sebrae" src="sebrae-11_files/logo-sebrae.jpg" alt="Sebrae" style="height:70px;width:140px;"></a></h1>
+			    <div class="temas-gestao">
+				    <h2>Canal do Fornecedor</h2>
+			    </div>
+			    <section class="login-register">
+				    &nbsp;
+			    </section>
+		    </div>
+        </div>
+    </div>
+
+    
+
+    <!-- /main header-->
+    <main id="main-content-front" style="margin-top: 0;">
+	    <div class="wrapper transparencia split">
+            <form method="post" action="frmPesquisarAvancadoLicitacao.aspx" id="defaultForm2">
+<div class="aspNetHidden">
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTcxMTg3MDM1Nw9kFgJmD2QWAgIFD2QWAgIBD2QWAgIBD2QWCgIBDxAPFgYeDURhdGFUZXh0RmllbGQFCURFU0NSSUNBTx4ORGF0YVZhbHVlRmllbGQFAklEHgtfIURhdGFCb3VuZGdkEBUEAB5FbSBBbmRhbWVudG8gICAgICAgICAgICAgICAgICAfQ29uY2x1w61kYSAgICAgICAgICAgICAgICAgICAgIB5DYW5jZWxhZGEgICAgICAgICAgICAgICAgICAgICAVBAEwAjIyAjIzAjI4FCsDBGdnZ2dkZAIDDxAPFgYfAAUJREVTQ1JJQ0FPHwEFAklEHwJnZBAVHQACQUMCQUwCQU0CQVACQkECQ0UCREYCRVMCR08CTUECTUcCTVMCTVQKPE5hY2lvbmFsPgJQQQJQQgJQRQJQSQJQUgJSSgJSTgJSTwJSUgJSUwJTQwJTRQJTUAJUTxUdAAIyMwIyMAIxMAIyMgIxNwIxMwExAjE4ATICMTQBNwE4ATYCOTkCMTICMjYCMjQCMTUCMjUBNAIxNgIxMQIyNwIxOQE1AjIxATMBORQrAx1nZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAgUPEA8WBh8ABQNBTk8fAQUDQU5PHwJnZBAVDwAEMjAwNAQyMDEwBDIwMDcEMjAwMQQyMDEzBDIwMDgEMjAxNgQyMDA1BDIwMTQEMjAxMQQyMDA2BDIwMTIEMjAwOQQyMDE1FQ8ABDIwMDQEMjAxMAQyMDA3BDIwMDEEMjAxMwQyMDA4BDIwMTYEMjAwNQQyMDE0BDIwMTEEMjAwNgQyMDEyBDIwMDkEMjAxNRQrAw9nZ2dnZ2dnZ2dnZ2dnZ2dkZAIHDxAPFgYfAAUJREVTQ1JJQ0FPHwEFAklEHwJnZBAVCgAIQ29uY3Vyc28SUHJlZ8OjbyBQcmVzZW5jaWFsDUNvbmNvcnLDqm5jaWEHTGVpbMOjbwdDb252aXRlE0F1ZGnDqm5jaWEgUMO6YmxpY2EOQ3JlZGVuY2lhbWVudG8TUHLDqS1xdWFsaWZpY2HDp8OjbxNQcmVnw6NvIEVsZXRyw7RuaWNvFQoAAjEyAjE2AjE4AjE5AjIwAjIxAjIyAjIzAjI2FCsDCmdnZ2dnZ2dnZ2dkZAITDzwrABEDAA8WBh8CZx4LXyFJdGVtQ291bnQCoAEeF0ZpcnN0RGlzcGxheWVkUGFnZUluZGV4AgpkARAWABYAFgAMFCsAABYCZg9kFhRmDw8WAh4HVmlzaWJsZWhkZAIBDw9kFgQeC29ubW91c2VvdmVyBSZ0aGlzLnN0eWxlLmJhY2tncm91bmRDb2xvcj0nI2VmZWZlZic7IB4Kb25tb3VzZW91dAUhdGhpcy5zdHlsZS5iYWNrZ3JvdW5kQ29sb3I9JyNmZmYnFgJmD2QWBAIDDw8WBB4PQ29tbWFuZEFyZ3VtZW50BQQ0MzEyHgRUZXh0BSs8c3Bhbj5QcmVnw6NvIEVsZXRyw7RuaWNvIC0gMDE3LzIwMTY8L3NwYW4+ZGQCBQ8PFgQfCAUENDMxMh8JBd0FPHNwYW4gY2xhc3M9dW5pZGFkZT5VbmlkYWRlIGRvIFNlYnJhZS8gR088L3NwYW4+PGgzPlByZWfDo28gRWxldHLDtG5pY28gLSAwMTcvMjAxNjwvaDM+PHA+PGI+T2JqZXRvOiA8L2I+VGVtIHBvciBvYmpldG8gYSBsb2Nhw6fDo28gZGUgZXF1aXBhbWVudG9zIGRlIGltcHJlc3PDo28sIGPDs3BpYSwgZGlnaXRhbGl6YcOnw6NvIGUgZmF4LCBjb20gbyBmb3JuZWNpbWVudG8sIGluc3RhbGHDp8OjbyBlIG1hbnV0ZW7Dp8OjbyBkZSBlcXVpcGFtZW50b3MgY29tIGEgdGVjbm9sb2dpYSBsYXNlciwgbW9ub2Nyb23DoXRpY29zIGUgcG9saWNyb23DoXRpY29zLCBiZW0gY29tbyBvIGZvcm5lY2ltZW50byBkZSBzdXByaW1lbnRvcyBvcmlnaW5haXMsIGV4Y2V0byBwYXBlbCwgdmlzYW5kbyBhdGVuZGVyIMOgcyBuZWNlc3NpZGFkZXMgZG8gU0VCUkFFL0dPLCBjb25mb3JtZSBUZXJtbyBkZSBSZWZlcsOqbmNpYSBBbmV4byAwMSBkbyBjb3JyZXNwb25kZW50ZSBFZGl0YWwuPGJyIC8+PGI+RGF0YSBkZSBBZGlhbWVudG8gOiA8L2I+MDgvMDkvMjAxNiDDoHMwMDowMCBoPGJyIC8+PGI+U2l0dWHDp8OjbzogPC9iPkVtIEFuZGFtZW50byAgICAgICAgICAgICAgICAgIDxiciAvPjxiPkxv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c2VydmnDp29zIGRlIHRlbGVjb211bmljYcOnw7VlcywgcXVlIHBvc3N1YSBvdXRvcmdhIGRhIEFOQVRFTCDigJMgQWfDqm5jaWEgTmFjaW9uYWwgZGUgVGVsZWNvbXVuaWNhw6fDtWVzLCBlbSByZWdpbWUgZGUgbsOjbyBleGNsdXNpdmlkYWRlLCBwYXJhIHByZXN0YcOnw6NvIGRlIHNlcnZpw6dvcyBkZSBUZWxlZm9uaWEgTcOzdmVsIFBlc3NvYWwgKFNNUCAtIFNlcnZpw6dvIE3Ds3ZlbCBQZXNzb2FsKSwgc29iIGRlbWFuZGEsIGF0cmF2w6lzIGRhIHRlY25vbG9naWEgNEcgKG9uZGUgaG91dmVyIGRpc3BvbmliaWxpZGFkZSkgZSAzRyBwZWxvIHNpc3RlbWEgZGlnaXRhbCBww7NzLXBhZ28sIG1lZGlhbnRlIG8gZm9ybmVjaW1lbnRvIGRlIGFjZXNzb3MgbcOzdmVpcywgZW0gcmVnaW1lIGRlIGNvbW9kYXRvIGRhcyBlc3Rhw6fDtWVzIG3Ds3ZlaXMgKGFwYXJlbGhvcyBjZWx1bGFyZXMpIHF1ZSBzZXLDo28gZGlzdHJpYnXDrWRhcyBuYXMgVW5pZGFkZXMgZG8gU0VCUkFFIE1HLCBvZmVyZWNlbmRvIG8gc2VydmnDp28gZGUgbGlnYcOnw7VlcyBMb2NhbCBlIE5hY2lvbmFsLCBhbMOpbSBkZSBzZXJ2acOnb3MgZGUgbWVuc2FnZW5zIGRlIHRleHRvIGUgcGFjb3RlIGRlIGRhZG9zIHBhcmEgYWNlc3NvIMOgIGludGVybmV0LCBjb20gdGFyaWZhcyBpbnRyYSBncnVwbyB6ZXJvIGUgcm9hbWluZyBuYWNpb25hbCBlIGludGVybmFjaW9uYWwsIGNvbmZvcm1lIGVzcGVjaWZpY2FkbyBubyBBbmV4byBJIOKAkyBFc3BlY2lmaWNhw6fDtWVzIFTDqWNuaWNhcyBNw61uaW1hcyBkb3MgVGVsZWZvbmVzIGUgU2VydmnDp29zLCBwYXJ0ZSBpbnRlZ3JhbnRlIGRvIEluc3RydW1lbnRvIENvbnZvY2F0w7NyaW8uPGJyIC8+PGI+RGF0YSBkZSBBZGlhbWVudG8gOiA8L2I+MDYvMTAvMjAxNiDDoHMwMDow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" type="hidden">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['defaultForm2'];
+if (!theForm) {
+    theForm = document.defaultForm2;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="sebrae-11_files/WebResource.axd" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="136E254F" type="hidden">
+	<input name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" type="hidden">
+	<input name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="2413" type="hidden">
+	<input name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="hjRW6Rv5_QZyfj_15g4NzHP4_3mrTa2-B0gYxryBVYkOc79j7jZJ5Apu2Q_PCk4k4tXCHTeoePcnSNIWjPwjaFoMuvwMjBShtvBTcEV-oB_LcoUtKhTHrEoF5_bQmA2NwxabovHmRIGye7_r39GHcg2" type="hidden">
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAFjFRaIRispVG5rJCcGW5lg0DuaokyOgsWlN4ycx/FklzhJPcvzJDBagtayRXVJBkve7iL0OdOIRItS3sb30wBwYPHFnwcGuuaJdmxKSL8aUzEUq1Jj/6kF+R2QlAXJhN6JtOGKC5ndbfOLVuOM9SMEfRyX5Y0h3FTxB2plmHf6RF0uYSGwn5SsNVi3LBXoVEQtIh9i9MkgiCaxIZJCDOdpOfKpbjAfS/FCGrIycKGTRJ2TKIZvXV9aSSD6+KmEStUT5ABtffeuZCNq4jndBjzBwmWy8bG+H5/DrAElPxXe92QavPNpBFejd49PSKpu4JEFfPM0al8pr19lFGfkamLBZc0LkXg82KidAq6mRoiSQmMTkgoE/xw2e/pfO2OE2i37YJ4Pz0NjZzdQxu4J/oX9LNHlQLRoRJaGTU2BfpVZt6BmYskkzzmOXrzyyy1bCW5WH8XTcgmqWigd3ofzNpRTYDCR4huUxcsOgZQMHPsxavM8AEyJpumAFSeX6zdIpjNKkTX4pPsABjaQiEP3TN/QsoBKkdnuVRjHF+XuY/9K4nJWp3yRnkxTMazifLYas0tLTVtuq+dPu4qNz3h16KLyX3TwlHzEMuOP4MyI5U1wr5hQNzfQnfoLvSDhwg89rOu5btDaB+qoAC2ra3DFZ2CehwGK+s7z0amYnMWQ3QuZkROHfhX2ryuPAsxk9IYyyySB29Zs38SRcZj78TtdkRQ+nTQDf9Wce5CRRSgvOupsF2tPwn5VO4Gf0sTQNpj/9YAfYohD74hepvuTqUo1fPMMMc0uo7bnJpEL5XD/Kib5PKFh/hABns1XqeTJ6n/7DVBPoLFslgfC/t4FfVKRRZskTmpMbVyEUJUknYRXXyRbHbWY/e1oSwUtOzoZthJCXZWz4JxM0CYPpTihwXqF5TY/hoTAJFhUoKRO04E4RLX7OTsxZkDmOHztRp1bNRmwDY6pLOkpeaRgUJJim6oM9QWKQFry+WIheo7bEmXyO/n5Foay4H2ol/jDf1P+1yaVQ3poVi8MHEvrAPcbiqgVjmIQxJODuIHTpvC466diJLeVyFl6b5EK6AJGoBBXlS00nzKfevm2wyPJ+30ZaL3D+3Ex+AM6hk1KCF0+Cc6l2deZGQvw3h9mAkFopk6XYGj+nkecwQcacbGkIKzEZ2PYIfAVoGMJxQBbr3wsaBZNAQQWWw/MaQNb2J5i2wCjpGKoAnnV5QCW/dDWNW2RkTHYu+JOJzMWWBl2kkXMI2XPnTPjFoLCWoD1t3dqXgTT5gdNXz9SWqcFgGjT5B5Y79i00sD/NS+TbmSdYDFXMmK+DMqvlunl/ONk9BidcMbTygrq8iK9XAD1xaRd1ezT8cRL6Uxil99JuDQWcKzGKsWS4gbIM0n4YzL7tGJseqzwOtG4vZblbHSR33ZKz330FOIRadz29gnpiWmKgIFqdSuDmGsb8Y9qyfFABDC5dZIMFMKxEbnIxf4dKDEFirEWtfwVKURqYA+Ak0Mqy83Twso4Y42EuNgPoNcqPDFeYU+Keh1IvsazaBpA8ZAUeJ1QDV2A0ugu91V0Bn0Gl4J107lTxG4eO6fseudzM4en4lGs0ECRzHZMiRo8XA1LFdioJWbeeG+GAKCxzBc9HZv5v/TC+xRgQtSmhEr9Ai2MGnKFx/kUKn7H0xxlD1d811YSA6pdCZFdEGKpEE7lY8zyHsxaOoaFescWoQ7o0FRz/5igQg0rjCfiQ/NIOeuwzMusR2Yc3bUWfgTo6yzBms/8txOdzbcM3D17570FBFtsUBrsWZ8OzAq5HcvO+LMpn5UPYAjU3TUF1gOCwgoWMDYo87JOvpX9xynRKBzV/wzORmln5rV86U5pPm9TE73lTuWtDjlYXwzvjZkGho7j0f6viBOUEEqrVSFRmpJM6bawZ53tU7+WHxNM=" type="hidden">
+</div>
+                <div id="Panel1" style="text-align:left;">
+	
+                    
+
+<style type="text/css">
+.unidade {
+    display: block;
+    font: bold 22px/25px Lato,arial,helvetica,sans-serif!important;
+    height: auto;
+    margin: 0 0 0 20px;
+    text-align: left;
+    width: 100%;
+}
+</style>
+<div id="blocoParticipeLicitacoes">
+    <h3 style="margin-top: 20px">
+        Pesquisar Licitações</h3><div style="color: #766f17; background-color: #fff655; border: 1px #766f17 solid; border-radius: 5px; padding: 14px; margin: 10px;">Senhor fornecedor, para acessar as licitações do SEBRAE NACIONAL publicadas a partir de 20/11/2015, <a href="http://www.scf2.sebrae.com.br/portalcf/"> clique aqui</a>.Para as demais licitações continue nesta página. </div>
+    <!-- COMBOBOX FIELD -->
+    <div class="formLeftBlock FBRelative">
+        <label class="formLabel" for="cmbSituacao">
+            Situação</label>
+        <select name="ctl00$ContentPlaceHolder1$cmbSituacao" id="ContentPlaceHolder1_cmbSituacao" class="inputVisible" style="width:340px;">
+		<option value="0"></option>
+		<option selected="selected" value="22">Em Andamento                  </option>
+		<option value="23">Concluída                     </option>
+		<option value="28">Cancelada                     </option>
+
+	</select>
+    </div>
+    <!-- END: COMBOBOX FIELD -->
+
+    <!-- COMBOBOX FIELD -->
+    <div class="formCenterBlock FBRelative" style="margin-right: 8px!Important;">
+        <label class="formLabel" for="cmbUF">
+            Unidade Sebrae</label>
+        <select name="ctl00$ContentPlaceHolder1$cmbUF" id="ContentPlaceHolder1_cmbUF" class="inputVisible nacional" style="width:212px;">
+		<option selected="selected" value=""></option>
+		<option value="23">AC</option>
+		<option value="20">AL</option>
+		<option value="10">AM</option>
+		<option value="22">AP</option>
+		<option value="17">BA</option>
+		<option value="13">CE</option>
+		<option value="1">DF</option>
+		<option value="18">ES</option>
+		<option value="2">GO</option>
+		<option value="14">MA</option>
+		<option value="7">MG</option>
+		<option value="8">MS</option>
+		<option value="6">MT</option>
+		<option value="99">Sebrae Nacional</option>
+		<option value="12">PA</option>
+		<option value="26">PB</option>
+		<option value="24">PE</option>
+		<option value="15">PI</option>
+		<option value="25">PR</option>
+		<option value="4">RJ</option>
+		<option value="16">RN</option>
+		<option value="11">RO</option>
+		<option value="27">RR</option>
+		<option value="19">RS</option>
+		<option value="5">SC</option>
+		<option value="21">SE</option>
+		<option value="3">SP</option>
+		<option value="9">TO</option>
+
+	</select>
+    </div>
+    <!-- END: COMBOBOX FIELD -->
+
+    <!-- COMBOBOX FIELD -->
+    <div class="formRightBlock FBRelative" style="margin-left: 8px!Important;">
+        <label class="formLabel" for="ddlAno">
+            Ano</label>
+        <select name="ctl00$ContentPlaceHolder1$ddlAno" id="ContentPlaceHolder1_ddlAno" class="inputVisible width132" style="width:132px;">
+		<option selected="selected" value=""></option>
+		<option value="2004">2004</option>
+		<option value="2010">2010</option>
+		<option value="2007">2007</option>
+		<option value="2001">2001</option>
+		<option value="2013">2013</option>
+		<option value="2008">2008</option>
+		<option value="2016">2016</option>
+		<option value="2005">2005</option>
+		<option value="2014">2014</option>
+		<option value="2011">2011</option>
+		<option value="2006">2006</option>
+		<option value="2012">2012</option>
+		<option value="2009">2009</option>
+		<option value="2015">2015</option>
+
+	</select>
+    </div>
+    <!-- END: COMBOBOX FIELD -->
+		
+    <!-- COMBOBOX FIELD -->
+    <div class="formLeftBlock FBRelative">
+        <label class="formLabel" for="inputVisible"> 
+            Modalidade</label>
+        <select name="ctl00$ContentPlaceHolder1$cmbModalidade" id="ContentPlaceHolder1_cmbModalidade" class="inputVisible width339" style="width:339px;">
+		<option selected="selected" value=""></option>
+		<option value="12">Concurso</option>
+		<option value="16">Pregão Presencial</option>
+		<option value="18">Concorrência</option>
+		<option value="19">Leilão</option>
+		<option value="20">Convite</option>
+		<option value="21">Audiência Pública</option>
+		<option value="22">Credenciamento</option>
+		<option value="23">Pré-qualificação</option>
+		<option value="26">Pregão Eletrônico</option>
+
+	</select>
+    </div>
+    <!-- END: COMBOBOX FIELD -->
+		
+    <!-- FIELD NUMERO LICITAÇÃO -->
+    <div class="formRightBlock FBRelative">
+        <label class="formLabel" for="txtNLicitacao">
+            Nº da Licitação</label>
+        <input name="ctl00$ContentPlaceHolder1$txtNLicitacao" id="ContentPlaceHolder1_txtNLicitacao" class="inputDefault width339" style="width:360px;" type="text">
+    </div>
+    <!-- END: FIELD NUMERO LICITAÇÃO -->
+        
+    <!-- FIELD PALAVRA-CHAVE -->
+    <div class="formLeftBlock FBRelative">
+        <label class="formLabel" for="inputVisible">
+            Palavra-chave</label>
+        <input name="ctl00$ContentPlaceHolder1$txtPalavraChave" id="ContentPlaceHolder1_txtPalavraChave" class="inputDefault width700" style="width:720px;" type="text">
+    </div>
+    <!-- END: FIELD PALAVRA-CHAVE -->
+        
+    <input name="ctl00$ContentPlaceHolder1$imgBuscar2" id="ContentPlaceHolder1_imgBuscar2" src="sebrae-11_files/Pesquisar.png" onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ContentPlaceHolder1$imgBuscar2", "", false, "", "frmPesquisarAvancadoLicitacao.aspx", false, false))' style="color:White;" type="image">
+
+    
+    
+    <img src="sebrae-11_files/imgSeparador.png" alt="" title="" id="imgSeparador">
+    <!-- CLEAR BLOCK -->
+    <div class="clearBlock"></div>
+    <!-- END: CLEAR BLOCK -->
+
+    <div id="ContentPlaceHolder1_Pnlavancada" class="tam_370" style="width:347px;">
+		
+        <table cellpadding="0" cellspacing="0" border="0">
+        </table>
+    
+	</div>
+    
+    <div>
+		<table class="Tabela" rules="all" id="ContentPlaceHolder1_gdvResultado" style="border-width:0px;border-collapse:collapse;" cellpadding="0" cellspacing="0">
+			<tbody><tr onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl02$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_0" value="4312" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_0" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl02$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ GO</span><h3>Pregão Eletrônico - 017/2016</h3><p><b>Objeto: </b>Tem
+ por objeto a locação de equipamentos de impressão, cópia, digitalização
+ e fax, com o fornecimento, instalação e manutenção de equipamentos com a
+ tecnologia laser, monocromáticos e policromáticos, bem como o 
+fornecimento de suprimentos originais, exceto papel, visando atender às 
+necessidades do SEBRAE/GO, conforme Termo de Referência Anexo 01 do 
+correspondente Edital.<br><b>Data de Adiamento : </b>08/09/2016 às00:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>www.licitacoes-e.com.br<br><b>Telefone: </b>(62) 32502456 &nbsp;&nbsp;&nbsp;<b>Fax: </b>         <br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl03$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_1" value="4296" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_1" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl03$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ RJ</span><h3>Concorrência - 27/2016</h3><p><b>Objeto: </b>Contratação
+ de serviços de Suporte Técnico para a Evolução do Modelo de Atuação das
+ Áreas de Negócio, Administrativas e de Tecnologia da Informação do 
+Sebrae/RJ.<br><b>Data de Adiamento : </b>08/09/2016 às00:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>Rua Santa Luzia, 685, 9° andar, Centro, Rio de Janeiro, RJ<br><b>Telefone: </b> --          &nbsp;&nbsp;&nbsp;<b>Fax: </b>         <br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl04$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_2" value="4305" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_2" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl04$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ GO</span><h3>Pregão Eletrônico - 016/2016</h3><p><b>Objeto: </b>Contratação de empresa especializada na prestação de serviços de apoio administrativo para o SEBRAE/GO.<br><b>Data de Abertura : </b>23/08/2016 às10:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>www.licitacoes-e.com.br<br><b>Telefone: </b>(62) 32502456 &nbsp;&nbsp;&nbsp;<b>Fax: </b>         <br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl05$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_3" value="4291" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_3" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl05$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ MG</span><h3>Pregão Presencial - 017/2016 - MG</h3><p><b>Objeto: </b>Contratação
+ de empresa especializada em serviços de telecomunicações, que possua 
+outorga da ANATEL – Agência Nacional de Telecomunicações, em regime de 
+não exclusividade, para prestação de serviços de Telefonia Móvel Pessoal
+ (SMP - Serviço Móvel Pessoal), sob demanda, através da tecnologia 4G 
+(onde houver disponibilidade) e 3G pelo sistema digital pós-pago, 
+mediante o fornecimento de acessos móveis, em regime de comodato das 
+estações móveis (aparelhos celulares) que serão distribuídas nas 
+Unidades do SEBRAE MG, oferecendo o serviço de ligações Local e 
+Nacional, além de serviços de mensagens de texto e pacote de dados para 
+acesso à internet, com tarifas intra grupo zero e roaming nacional e 
+internacional, conforme especificado no Anexo I – Especificações 
+Técnicas Mínimas dos Telefones e Serviços, parte integrante do 
+Instrumento Convocatório.<br><b>Data de Adiamento : </b>06/10/2016 às00:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>Sede do Sebrae Minas<br><b>Telefone: </b> --          &nbsp;&nbsp;&nbsp;<b>Fax: </b>         <br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl06$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_4" value="4275" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_4" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl06$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ ES</span><h3>Pregão Eletrônico - PE 018/2016-ES</h3><p><b>Objeto: </b>Aquisição,
+ por ATA DE REGISTRO DE PREÇOS, de 35 (trinta e cinco) notebooks, 
+conforme especificações constantes no Anexo I - Termo de Referência. 
+NOVA DATA DE ABERTURA: 01/09/2016 - 14H00.<br><b>Data de Adiamento : </b>01/09/2016 às00:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>Sistema licitacoes-e - Banco do Brasil<br><b>Telefone: </b>(27) 30415532 &nbsp;&nbsp;&nbsp;<b>Fax: </b> 30415532<br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl07$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_5" value="4277" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_5" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl07$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ RJ</span><h3>Pregão Presencial - 29/2016</h3><p><b>Objeto: </b>Aquisição de cadeiras de escritório giratórias, incluídos os serviços de montagem e transporte.<br><b>Data de Abertura : </b>10/08/2016 às10:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>Rua Santa Luzia, 685, 9° andar, Centro, Rio de Janeiro, RJ <br><b>Telefone: </b> --          &nbsp;&nbsp;&nbsp;<b>Fax: </b>         <br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl08$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_6" value="4232" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_6" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl08$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ RJ</span><h3>Pregão Eletrônico - 25/2016</h3><p><b>Objeto: </b>Registro de Preços para o fornecimento, sob demanda, de material de expediente.<br><b>Data de Abertura : </b>09/08/2016 às10:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>www.bbmnet.com.br<br><b>Telefone: </b> --          &nbsp;&nbsp;&nbsp;<b>Fax: </b>         <br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr style="background-color: rgb(255, 255, 255);" onmouseover="this.style.backgroundColor='#efefef'; " onmouseout="this.style.backgroundColor='#fff'">
+				<td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody><tr>
+
+                            <td>
+                                <!-- RESULTADO BUSCA -->
+                                <div id="resultadoBusca">
+                                    <input name="ctl00$ContentPlaceHolder1$gdvResultado$ctl09$HiddenID" id="ContentPlaceHolder1_gdvResultado_HiddenID_7" value="4229" type="hidden">
+						            
+
+                                    <a id="ContentPlaceHolder1_gdvResultado_imgArquivoLicitacao_7" class="unidade" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado$ctl09$imgArquivoLicitacao','')" style="text-decoration:none;"><span class="unidade">Unidade do Sebrae/ ES</span><h3>Concorrência - CC 001-2016-ES</h3><p><b>Objeto: </b>Contratação
+ de empresa para prestação de serviços especializados em Engenharia e 
+Medicina Ocupacional., de acordo com as especificações contidas no Anexo
+ I do Edital.<br><b>Data de Abertura : </b>22/07/2016 às14:00 h<br><b>Situação: </b>Em Andamento                  <br><b>Local da Licitação: </b>Sede Sebrae/ES - Av. Jerônimo Monteiro, 935 - Centro - Vitória - ES<br><b>Telefone: </b>(27) 30415532 &nbsp;&nbsp;&nbsp;<b>Fax: </b> 30415532<br></p></a>
+                                </div>
+                                <!-- FIM RESULTADO BUSCA -->
+                            </td>
+                        </tr>
+
+                        
+                        
+                    </tbody></table>
+                </td>
+			</tr><tr class="pageBlock" align="center">
+				<td colspan="1"><table>
+					<tbody><tr>
+						<td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$10')">...</a></td><td><span>11</span></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$12')">12</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$13')">13</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$14')">14</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$15')">15</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$16')">16</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$17')">17</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$18')">18</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$19')">19</a></td><td><a href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$gdvResultado','Page$20')">20</a></td>
+					</tr>
+				</tbody></table></td>
+			</tr>
+		</tbody></table>
+	</div>
+
+</div>
+<style type="text/css">
+.pageBlock {
+    background: url("../img/bgPageBlock.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+    height: 42px;
+    margin: 37px 0 0;
+    color: #5C6D7E;
+}
+.pageBlock td span, .pageBlock td a
+{
+    font: bold 14px/42px Lato,arial,helvetica,sans-serif;
+    padding: 15px;
+    color: #5C6D7E;
+}
+.pageBlock td a
+{
+    color: #5C6D7E;
+}
+.pageBlock td span
+{
+    color: #BCC1C2 !important;
+}
+
+</style>
+
+<script src="sebrae-11_files/jquery-1.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //var options = $('select.nacional option');
+        //var arr = options.map(function (_, o) { return { t: $(o).text(), v: o.value, s: o.selected }; }).get();
+        //options.each(function (i, o) {
+        //    if (arr[t].s == '<Nacional>')
+        //        o.value = 'Sebrae Nacional';
+        //});
+
+        //$('#practice_id').change(function () {
+        //    var val = $(this).val();
+        //    alert(val);
+        //    $('option[value=' + val + ']', this).val('changed');
+        //});
+
+        $('select.nacional option:contains("<Nacional>")').text('Sebrae Nacional');
+    });
+</script>
+          
+
+<script type="text/javascript">
+                var urlPortalCFNovo = "http://www.scf2.sebrae.com.br/portalcf/";
+
+                $("#blocoParticipeLicitacoes > h3")
+                               .after("<div style='color: #766f17; background-color: #fff655; border: 1px #766f17 solid; border-radius: 5px; padding: 14px; margin: 10px;'>" +
+                                                               "Senhor fornecedor, para acessar as licitações do SEBRAE NACIONAL publicadas a partir de 20/11/2015, <a href='" + urlPortalCFNovo + "'> clique aqui</a>."  +
+                                                               "Para as demais licitações continue nesta página. " );
+</script>
+
+
+
+
+
+
+                
+</div>            
+	        
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+
+theForm.oldOnLoad = window.onload;
+window.onload = WebForm_RestoreScrollPosition;
+//]]>
+</script>
+</form>
+	    </div>
+    </main>
+
+    <div>
+        <div id="footer" class="footer" style="text-align: left">
+            <div class="wrapper">
+                <div class="formLeftBlock FB100">
+                    <p style="font-size: 13px">Participe das Licitações do Sistema Sebrae.</p>
+                </div>
+		    </div>
+        </div>
+    </div>
+
+
+</body></html>
