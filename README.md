@@ -25,7 +25,7 @@ Buscar informações e extrair dados no SCF do Sebrae, para posteriormente reali
 
 # Quantidade de licitações por estados brasileiros - em 08/11/2016
 
-<center><img height="450px" src="https://raw.githubusercontent.com/jh00nbr/sebrae_licitacoes_crawler/master/graficos/quantidade_licitacao_por_estado.png"></img></center><br>
+<center><img height="550px" src="https://raw.githubusercontent.com/jh00nbr/sebrae_licitacoes_crawler/master/graficos/quantidade_licitacao_por_estado.png"></img></center><br>
 
 * AC: 11
 * AL: 3
