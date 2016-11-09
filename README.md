@@ -1,4 +1,5 @@
-# Sebrae Licitacoes - SCF - Canal do Fornecedor
+# Sebrae Licitações - SCF - Canal do Fornecedor
+O Canal do Fornecedor é responsável pela divulgação e manutenção das Licitações do Sebrae.
 
 # Objetivo
 Buscar informações e extrair dados no SCF do Sebrae, para posteriormente realizar análise de texto e geração de graficos.
