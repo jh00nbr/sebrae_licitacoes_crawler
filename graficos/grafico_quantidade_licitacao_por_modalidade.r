@@ -1,11 +1,11 @@
-library('RMySQL')
-library('ggplot2')
-library('plotly')
+library('RMySQL') # install.packages('RMySQL')
+library('ggplot2') # install.packages('ggplot2')
+library('plotly') # install.packages('plotly')
 
 #install.packages('plotly')
 #install.packages("devtools", dependencies = TRUE)
 
-setwd('/root/Área\ de\ trabalho/negocios_reais')
+setwd('/root/Área\ de\ trabalho/graficos/negocios_reais')
 
 db <- dbConnect(MySQL(),user="root",password="",dbname="negocios_reais",host="127.0.0.1")
 modalidade <- as.vector(c('Leilao','Pregao Presencial','Pregao Eletronico','Concorrencia','Convite','Pre-qualificacao','Credenciamento'))
