@@ -21,8 +21,8 @@ Buscar informações e extrair dados no SCF do Sebrae, para posteriormente reali
 
 
 
-
 <img height="450px" src="https://github.com/jh00nbr/sebrae_licitacoes_crawler/raw/master/graficos/quantidade_licitacao_por_modalidade.png"></img><br>
 
- 
+ # Exemplo - Banco de dados:
+ <img src="https://raw.githubusercontent.com/jh00nbr/sebrae_licitacoes_crawler/master/graficos/db.png"></img>
 
