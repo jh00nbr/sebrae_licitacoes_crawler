@@ -11,7 +11,7 @@ Buscar informações e extrair dados no SCF do Sebrae, para posteriormente reali
 
 # Quantidade de licitações por modalidade
 
-<img height="450px" src="https://github.com/jh00nbr/sebrae_licitacoes_crawler/raw/master/graficos/quantidade_licitacao_por_modalidade.png"></img>
+<img height="450px" src="https://github.com/jh00nbr/sebrae_licitacoes_crawler/raw/master/graficos/quantidade_licitacao_por_modalidade.png"></img><br>
 Leilao: 4<br>
 Pregao: Presencial: 76<br>
 Pregao: Eletronico: 28<br>
