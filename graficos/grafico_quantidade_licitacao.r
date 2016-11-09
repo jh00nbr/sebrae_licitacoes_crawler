@@ -5,6 +5,8 @@ library('plotly') # install.packages('plotly')
 #install.packages('plotly')
 #install.packages("devtools", dependencies = TRUE)
 
+# By Jhonathan Davi A.K.A jh00nbr
+
 setwd('/root/Área\ de\ trabalho/negocios_reais')
 
 db <- dbConnect(MySQL(),user="root",password="",dbname="negocios_reais",host="127.0.0.1")
