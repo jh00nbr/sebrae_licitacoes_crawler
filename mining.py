@@ -8,6 +8,7 @@ from unicodedata import normalize
 
 # Jhonathan Davi A.K.A jh00nbr / Insightl4b lab.insightsecurity.com.br
 # Blog: lab.insightsecurity.com.br
+# jh00nbr: http://jhonathandavi.com.br
 # Github: github.com/jh00nbr
 # Twitter @jh00nbr
 
