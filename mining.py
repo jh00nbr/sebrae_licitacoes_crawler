@@ -10,6 +10,7 @@ from unicodedata import normalize
 # Blog: lab.insightsecurity.com.br
 # jh00nbr: http://jhonathandavi.com.br
 # Github: github.com/jh00nbr
+# jhonathandavi.com.br
 # Twitter @jh00nbr
 
 __author__ = "Jhonathan Davi A.K.A jh00nbr"
