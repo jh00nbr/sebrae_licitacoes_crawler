@@ -15,7 +15,7 @@ from unicodedata import normalize
 __author__ = "Jhonathan Davi A.K.A jh00nbr"
 __email__ = "jonatas.davi@outlook.com"
 
-db = MySQLdb.connect(host='localhost',user='root',passwd='',db='negocios_reais',charset='utf8', use_unicode=True, init_command='SET NAMES UTF8')
+db = MySQLdb.connect(host='localhost',user='root',passwd='',db='db_db',charset='utf8', use_unicode=True, init_command='SET NAMES UTF8')
 cur = db.cursor()
 
 class MLStripper(HTMLParser):
